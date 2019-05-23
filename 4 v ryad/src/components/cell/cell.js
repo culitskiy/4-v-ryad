@@ -11,6 +11,9 @@ export default class Cell extends React.Component {
             case 2:
             return 'cell player2';
 
+            case '1':
+            return 'cell win';
+
             default:
             return 'cell blank';
         }

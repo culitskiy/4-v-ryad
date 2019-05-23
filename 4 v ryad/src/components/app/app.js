@@ -30,9 +30,11 @@ class App extends React.Component {
                let arr = this.state.field[a].slice(b,b+4);
                
                if (arr.every((i) => { return i === 1})) {
-                   return alert('Pobedil player1');
+                   arr.map((el) => {return el = '1'})
+                   console.log(typeof arr[1]);
+                   return setTimeout(() => {alert('Pobedil player1')}, 100);
                } if (arr.every((i) => { return i === 2})) {
-                    return alert("Pobedil player2");
+                    return setTimeout(() => {alert('Pobedil player2')}, 100);
                 }
             }
         }
@@ -60,9 +62,9 @@ class App extends React.Component {
             let arr = hArr[a].slice(b,b+4);
             
             if (arr.every((i) => { return i === 1})) {
-                return alert('Pobedil player1');
+                return setTimeout(() => {alert('Pobedil player1')}, 100);
             } if (arr.every((i) => { return i === 2})) {
-                    return alert("Pobedil player2");
+                    return setTimeout(() => {alert("Pobedil player2")},100);
                 }
             }
         }
@@ -115,9 +117,9 @@ class App extends React.Component {
             let arr = diagonalArr[a].slice(b,b+4);
             
             if (arr.every((i) => { return i === 1}) && (arr.length >= 4)) {
-                return alert('Pobedil player1');
+                return setTimeout(() => {alert('Pobedil player1')},100);
             } if (arr.every((i) => { return i === 2}) && (arr.length >= 4)) {
-                    return alert("Pobedil player2");
+                    return setTimeout(() => {alert("Pobedil player2")},100);
                 }
             }
         }

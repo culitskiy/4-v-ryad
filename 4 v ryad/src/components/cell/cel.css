@@ -9,3 +9,6 @@
 .cell.player2 {
     background: blue;
 }
+.cell.win {
+    background: red;
+}
