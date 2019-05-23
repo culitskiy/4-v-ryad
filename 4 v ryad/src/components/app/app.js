@@ -2,7 +2,7 @@ import React from 'react';
 
 import Table from '../table/table';
 import { RestartBtn } from '../restart/restart';
-import { StatusPanel } from '../statusPanel/statusPanel';
+import './app.css';
 
 class App extends React.Component {
 
@@ -32,9 +32,9 @@ class App extends React.Component {
                if (arr.every((i) => { return i === 1})) {
                    arr.map((el) => {return el = '1'})
                    console.log(typeof arr[1]);
-                   return setTimeout(() => {alert('Pobedil player1')}, 100);
+                   return setTimeout(() => {alert('Победил 1 игрок!')}, 100);
                } if (arr.every((i) => { return i === 2})) {
-                    return setTimeout(() => {alert('Pobedil player2')}, 100);
+                    return setTimeout(() => {alert('Победил 2 игрок!')}, 100);
                 }
             }
         }
@@ -62,9 +62,9 @@ class App extends React.Component {
             let arr = hArr[a].slice(b,b+4);
             
             if (arr.every((i) => { return i === 1})) {
-                return setTimeout(() => {alert('Pobedil player1')}, 100);
+                return setTimeout(() => {alert('Победил 1 игрок!')}, 100);
             } if (arr.every((i) => { return i === 2})) {
-                    return setTimeout(() => {alert("Pobedil player2")},100);
+                    return setTimeout(() => {alert("Победил 2 игрок!")},100);
                 }
             }
         }
@@ -117,9 +117,9 @@ class App extends React.Component {
             let arr = diagonalArr[a].slice(b,b+4);
             
             if (arr.every((i) => { return i === 1}) && (arr.length >= 4)) {
-                return setTimeout(() => {alert('Pobedil player1')},100);
+                return setTimeout(() => {alert('Победил 1 игрок!')},100);
             } if (arr.every((i) => { return i === 2}) && (arr.length >= 4)) {
-                    return setTimeout(() => {alert("Pobedil player2")},100);
+                    return setTimeout(() => {alert("Победил 2 игрок!")},100);
                 }
             }
         }
@@ -157,9 +157,9 @@ class App extends React.Component {
     // clickColumn = this.clickColumn.bind(this);
     statusPanel = () => {
         if (this.state.player1) {
-            return "First Player";
+            return "Первый игрок, ходи!";
         } else {
-            return 'Second Player';
+            return 'Второй игрок, ходи!';
         }
       
     };
@@ -170,13 +170,13 @@ class App extends React.Component {
     render() {
        
         return (
-            <div>
-               <div>{this.statusPanel()}</div> 
+            <div className='app'>
+               <div className='statusPanel'>{this.statusPanel()}</div> 
             <div>
                 <Table data={this.state.field} clickColumn={this.clickColumn}/>
                 
             </div>
-            <RestartBtn restart={this.restart}/>
+           <div> <RestartBtn restart={this.restart}/></div>
             
             </div>
         );
