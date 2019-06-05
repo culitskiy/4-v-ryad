@@ -19,7 +19,7 @@ export default class Cell extends React.Component {
         }
     }
     clickCell() {
-        this.props.clickCell(this.props.i, this.props.y);
+        this.props.clickCell( this.props.i, this.props.y);
         // console.log(this.props.y);
     }
     clickCell = this.clickCell.bind(this);

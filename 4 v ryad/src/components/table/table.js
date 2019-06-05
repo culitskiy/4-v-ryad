@@ -4,7 +4,7 @@ import Column from '../column/column';
 
 class Table extends React.Component {
     showColumns(data) {
-        return data.map((el,i) => (<Column data={el} i={i} clickColumn={this.props.clickColumn}/>))    
+        return data.map((el,i) => (<Column data={el} i={i} key={i} clickColumn={this.props.clickColumn}/>))    
     }
 
     render() {

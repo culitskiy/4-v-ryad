@@ -5,7 +5,7 @@ import Cell from '../cell/cell';
 export default class Column extends React.Component {
 
     showCell (data){
-        return data.map((el, i) => (<Cell data={el} i={this.props.i} y={i} clickCell={this.props.clickColumn}/>));
+        return data.map((el, i) => (<Cell data={el} i={this.props.i} y={i} key={i} clickCell={this.props.clickColumn}/>));
     }
 
     // clickColumn() {
